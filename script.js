@@ -1,23 +1,33 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.tab');
     
-    if (name.length < 2) {
-        alert('Please enter a valid name');
-        e.preventDefault();
-        return;
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            loadArticles(this.textContent.toLowerCase());
+        });
+    });
+
+    // Dynamic article loading
+    function loadArticles(category) {
+        fetch(`get_articles.php?category=${category}`)
+            .then(response => response.json())
+            .then(articles => {
+                displayArticles(articles);
+            })
+            .catch(error => console.error('Error:', error));
     }
-    
-    if (phone.length < 10) {
-        alert('Please enter a valid phone number');
-        e.preventDefault();
-        return;
-    }
-    
-    if (!email.includes('@')) {
-        alert('Please enter a valid email address');
-        e.preventDefault();
-        return;
-    }
+
+    // Infinite scroll implementation
+    let isLoading = false;
+    window.addEventListener('scroll', () => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+            if (!isLoading) {
+                isLoading = true;
+                loadMoreArticles();
+            }
+        }
+    });
 });

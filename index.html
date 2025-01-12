@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Information Form</title>
+    <title>Tech Blog Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <form id="contactForm" action="process.php" method="POST">
-            <h2>Contact Information</h2>
-            
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+    <header>
+        <nav>
+            <div class="logo">SF BEN</div>
+            <div class="nav-links">
+                <a href="#events">Events</a>
+                <a href="#career">Career</a>
+                <a href="#articles">Articles</a>
+                <a href="#news">News</a>
             </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
             </div>
+        </nav>
+    </header>
 
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+    <main>
+        <div class="tab-section">
+            <button class="tab active">Most Popular</button>
+            <button class="tab">Follow Blog</button>
+        </div>
+
+        <div class="content-grid">
+            <div class="article-card main-article">
+                <img src="article-image.jpg" alt="Article thumbnail">
+                <div class="article-content">
+                    <h2>Are Salesforce Certifications Still Relevant?</h2>
+                    <p class="author">By Henry Martin</p>
+                    <p class="date">January 29, 2024</p>
+                </div>
             </div>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+            <!-- More article cards here -->
+        </div>
+    </main>
 </body>
 </html>
