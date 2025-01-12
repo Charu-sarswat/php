@@ -3,42 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog Platform</title>
+    <title>SF BEN</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">SF BEN</div>
-            <div class="nav-links">
-                <a href="#events">Events</a>
-                <a href="#career">Career</a>
-                <a href="#articles">Articles</a>
-                <a href="#news">News</a>
-            </div>
-            <div class="search-icon">
-                <i class="fas fa-search"></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="logo">SF BEN</div>
+        <ul class="nav-links">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">AppAssessor</a></li>
+            <li><a href="#">Salesforce News</a></li>
+            <li><a href="#">Articles by Role</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <div class="tab-section">
-            <button class="tab active">Most Popular</button>
-            <button class="tab">Follow Blog</button>
-        </div>
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+        <button class="tab active">Latest</button>
+        <button class="tab">Most Popular</button>
+        <button class="tab">Editors' Picks</button>
+    </div>
 
-        <div class="content-grid">
-            <div class="article-card main-article">
-                <img src="article-image.jpg" alt="Article thumbnail">
-                <div class="article-content">
-                    <h2>Are Salesforce Certifications Still Relevant?</h2>
-                    <p class="author">By Henry Martin</p>
-                    <p class="date">January 29, 2024</p>
+    <!-- Main Content -->
+    <main class="content">
+        <article class="featured-article">
+            <div class="article-text">
+                <h1>Are Salesforce Certifications Still Relevant? Top Voices Join the Great Cert Debate</h1>
+                <div class="article-meta">
+                    <span class="author">By Henry Martin</span>
+                    <span class="date">January 10, 2024</span>
                 </div>
             </div>
-            <!-- More article cards here -->
-        </div>
+            <div class="article-image">
+                <div class="image-container">
+                    <img src="assest/image1.png" alt="Colorful skull illustration">
+                    <div class="image-contain">  <img src="assest/image2.png" alt="Second image description"> 
+                     <img src="assest/image3.png" alt="Third image description"> 
+                </div></div>
+                <span class="category-tag">Certifications</span>
+            </div>
+        </article>
     </main>
 </body>
 </html>

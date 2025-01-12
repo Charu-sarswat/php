@@ -1,9 +1,4 @@
-:root {
-    --primary-color: #6c5ce7;
-    --secondary-color: #a8a8a8;
-    --background-color: #ffffff;
-}
-
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,16 +6,17 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-nav {
+/* Navigation */
+.main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: var(--background-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
 }
 
 .logo {
@@ -30,6 +26,7 @@ nav {
 
 .nav-links {
     display: flex;
+    list-style: none;
     gap: 2rem;
 }
 
@@ -38,32 +35,72 @@ nav {
     color: #333;
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Filter Tabs */
+.filter-tabs {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Featured Article */
+.featured-article {
+    display: flex;
+    padding: 2rem;
     gap: 2rem;
-    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.article-card {
-    background: white;
+.article-text {
+    flex: 1;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.article-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.article-image {
+    flex: 1;
+    position: relative;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
-.article-card:hover {
-    transform: translateY(-5px);
+.category-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: #7c3aed;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
+.image-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
 }
