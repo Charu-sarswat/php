@@ -2,17 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #AEE5D8;
 }
 
 header {
-    padding: 20px 0;
+    padding: 20px 0 0 0px;
+    background-color: #E5C3D1;
 }
 
 .h_container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #3C6E71;
+    gap: 40px;
+    
 }
 
 .nav-links ul {
@@ -22,7 +26,7 @@ header {
 
 .nav-links ul li {
     display: inline;
-    margin: 20px;
+    margin: 10px;
 }
 
 .nav-links ul li a {
@@ -52,18 +56,22 @@ header {
 }
 
 .search {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: #f8f9fa;
     border-radius: 20px;
     padding: 5px 15px;
+    width: 300px;
 }
 
 .search input {
+    flex: 1;
     padding: 8px;
     border: none;
     background: transparent;
     outline: none;
+    font-size: 14px;
 }
 
 .search button {
@@ -75,10 +83,74 @@ header {
     transform: scale(1.1);
 }
 
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    display: none;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.search-result-item .category {
+    font-size: 12px;
+    color: #666;
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+}
+
+/* Dark mode support */
+.dark-mode .search-results {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .search-result-item {
+    color: var(--text-color);
+    border-bottom-color: var(--border-color);
+}
+
+.dark-mode .search-result-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .main {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
+    background-color: #AEE5D8;
 }
 
 .main_container{
@@ -90,7 +162,7 @@ header {
     gap: 20px;
 }
 .heading_content{
-    border-left: 1px solid #000;
+    border-left: 1px solid #3C6E71;
     padding-left: 20px;
 }
 
@@ -106,6 +178,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    background-color: #E5C3D1;
 }
 
 .bottom_setting article:hover {
@@ -119,7 +192,7 @@ header {
 
 .side_container {
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #BB999C;
     border-radius: 8px;
     min-width: 240px;
 }
@@ -147,20 +220,6 @@ header {
 .box:hover {
     transform: scale(1.05);
 }
-/* .articles {
-    padding: 50px 0;
-} */
-
-/* .articles-grid {
-
-} */
-
-/* .articles-grid article {
-    background-color: #fff;
-    padding: 20px;
-    margin: 10px;
-    flex: 1;
-} */
 
 .button {
     display: inline-block;
@@ -172,10 +231,36 @@ header {
 }
 
 footer {
-    background-color: #343a40;
+    background-color: #BB999C;
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+#backToTop.visible {
+    display: block;
 }
 
 @media (max-width: 1024px) {
@@ -193,6 +278,121 @@ footer {
         justify-content: center;
     }
 }
+
+/* Dark mode styles */
+/* Dark mode toggle button styles */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: relative;
+    border-radius: 20px;
+    background: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle .moon {
+    display: none;
+}
+
+/* Dark mode variables and styles */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+}
+
+/* Apply dark mode styles */
+.dark-mode body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .h_container {
+    border-bottom-color: var(--border-color);
+}
+
+.dark-mode .nav-links ul li a {
+    color: var(--text-color);
+}
+
+.dark-mode .search {
+    background-color: var(--card-bg);
+}
+
+.dark-mode .bottom_setting article {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .side_container {
+    background-color: var(--card-bg);
+}
+
+.dark-mode .dark-mode-toggle {
+    background: #333;
+}
+
+.dark-mode .dark-mode-toggle .sun {
+    display: none;
+}
+
+.dark-mode .dark-mode-toggle .moon {
+    display: inline;
+}
+
+.reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.reading-progress {
+    position: relative;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #007bff, #00ff88);
+    transition: width 0.1s;
+}
+
+.progress-percentage {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background: #007bff;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.reading-progress:hover .progress-percentage {
+    opacity: 1;
+}
+
+/* Dark mode support */
+.dark-mode .reading-progress-container {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
 
 @media (max-width: 768px) {
     .top_setting {
@@ -212,4 +412,221 @@ footer {
         display: block;
         margin: 10px 0;
     }
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.share-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Platform-specific colors */
+.share-btn[data-platform="twitter"] {
+    background-image: url('twitter\ \(1\).png');
+    background-size:contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.share-btn[data-platform="linkedin"] {
+    background-image: url('linkedin\ \(1\).png');
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.share-btn[data-platform="facebook"] {
+    background-image: url('facebook\ \(1\).png');
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+/* Hover effect */
+.share-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.comments-section {
+    /* margin-top: 40px; */
+    padding: 40px;
+    border-top: 1px solid #eee;
+    width: 100%;
+    background-color: #E5C3D1;
+}
+
+.comment-form {
+    margin: 20px 0;
+}
+
+.comment-form textarea {
+    width: 60%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px 0;
+    min-height: 120px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+.comment-form button {
+    margin-top: 10px;
+    padding: 12px 24px;
+}
+
+/* Dark mode support */
+.dark-mode .comment-form textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.dark-mode .comment-form textarea:focus {
+    border-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .comment-form textarea {
+        padding: 12px;
+        margin: 10px 0;
+    }
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hero Image Container Styles */
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hero Image Styles */
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effects */
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Caption Styles */
+.hero-image .caption {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* Loading State */
+.hero-image.loading {
+    position: relative;
+}
+
+.hero-image.loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 0%,
+        #e0e0e0 50%,
+        #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 300px;
+        border-radius: 8px;
+    }
+    
+    .hero-image .overlay {
+        padding: 15px;
+    }
+}
+
+/* Dark Mode Support */
+.dark-mode .hero-image .overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        transparent 100%
+    );
 }
