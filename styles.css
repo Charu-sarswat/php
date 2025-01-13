@@ -3,30 +3,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: #AEE5D8;
+    box-sizing: border-box;
 }
 
 header {
-    padding: 20px 0 0 0px;
-    background-color: #E5C3D1;
+    padding: 20px 0 20px 0px;
+    background-color: #FAACA8;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    border-bottom: 4px solid black;
 }
 
 .h_container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid #3C6E71;
     gap: 40px;
     
 }
 
 .nav-links ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     list-style: none;
-    padding: 0;
 }
 
 .nav-links ul li {
-    display: inline;
-    margin: 10px;
+    white-space: nowrap;
 }
 
 .nav-links ul li a {
@@ -150,7 +153,11 @@ header {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
-    background-color: #AEE5D8;
+    background-color: #f76cfd;
+background-image: linear-gradient(225deg, #f76cfd 0%, #916fb9 50%, #2B86C5 100%);
+
+
+
 }
 
 .main_container{
@@ -162,7 +169,7 @@ header {
     gap: 20px;
 }
 .heading_content{
-    border-left: 1px solid #3C6E71;
+    border-left: 4px solid black;
     padding-left: 20px;
 }
 
@@ -178,7 +185,9 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    background-color: #E5C3D1;
+    background-color: #FAACA8;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
 }
 
 .bottom_setting article:hover {
@@ -192,7 +201,8 @@ header {
 
 .side_container {
     padding: 20px;
-    background-color: #BB999C;
+    background-color: #FAACA8;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
     border-radius: 8px;
     min-width: 240px;
 }
@@ -482,10 +492,8 @@ footer {
 }
 
 .comments-section {
-    /* margin-top: 40px; */
     padding: 40px;
     border-top: 1px solid #eee;
-    width: 100%;
     background-color: #E5C3D1;
 }
 
@@ -494,7 +502,7 @@ footer {
 }
 
 .comment-form textarea {
-    width: 60%;
+    width: 100%;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -629,4 +637,54 @@ footer {
         rgba(0, 0, 0, 0.5) 50%,
         transparent 100%
     );
+}
+
+#auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+}
+
+#auth-section span {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 8px 15px;
+}
+
+#auth-section a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+#auth-section a[href="logout.php"] {
+    color: #ff4444;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#auth-section a[href="logout.php"]:hover {
+    background-color: #ffeeee;
+    transform: translateY(-2px);
+}
+
+#auth-section a[href="login.html"] {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1d72c7;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#auth-section a[href="login.html"]:hover {
+    background-color: #41a0ff;
+    color: white;
+    transform: translateY(-2px);
 }
