@@ -48,53 +48,7 @@ backToTopButton.addEventListener("click", function() {
 //----------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
-// Dark mode functionality
-const darkModeToggle = document.getElementById('darkModeToggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDark);
-    
-    // Update button aria-label for accessibility
-    darkModeToggle.setAttribute('aria-label', 
-        isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'
-    );
-}
-
-// Check for saved user preference, if any, on load of the website
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if user has a saved preference
-    const savedPreference = localStorage.getItem('darkMode');
-    
-    if (savedPreference !== null) {
-        // If they do, apply their saved preference
-        if (savedPreference === 'true') {
-            document.body.classList.add('dark-mode');
-        }
-    } else {
-        // If they don't, check their system preference
-        if (prefersDarkScheme.matches) {
-            document.body.classList.add('dark-mode');
-        }
-    }
-});
-
-// Add toggle event listener
-darkModeToggle.addEventListener('click', toggleDarkMode);
-
-// Listen for system dark mode changes
-prefersDarkScheme.addListener((e) => {
-    if (localStorage.getItem('darkMode') === null) {
-        if (e.matches) {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-    }
-});
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
@@ -152,17 +106,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('searchButton');
     const searchResults = document.getElementById('searchResults');
     
-    // Sample search data
+    // Sample search data - replace with your actual data
     const searchData = [
-        { title: 'Understanding Salesforce Ecosystem', url: '#', category: 'Basics' },
-        { title: 'Top 10 Salesforce Tips for Beginners', url: '#', category: 'Tips' },
-        { title: 'Salesforce Best Practices', url: '#', category: 'Best Practices' },
-        { title: 'Salesforce Admin Guide', url: '#', category: 'Admin' },
-        { title: 'Salesforce Developer Tutorial', url: '#', category: 'Development' },
-        { title: 'Salesforce Integration Patterns', url: '#', category: 'Integration' },
-        { title: 'Lightning Web Components Basics', url: '#', category: 'Development' },
-        { title: 'Apex Programming Guide', url: '#', category: 'Development' },
-        { title: 'Salesforce Security Best Practices', url: '#', category: 'Security' }
+        { title: 'Website Development', url: '#', category: 'Development' },
+        { title: 'Brand Building', url: '#', category: 'Marketing' },
+        { title: 'Digital Marketing', url: '#', category: 'Marketing' },
+        { title: 'SEO & Content Writing', url: '#', category: 'Content' },
+        { title: 'App Development', url: '#', category: 'Development' },
+        { title: 'UI/UX Designing', url: '#', category: 'Design' },
+        { title: 'Embrace Responsive Design', url: '#', category: 'Development' },
+        { title: 'Mobile Optimization', url: '#', category: 'Development' },
+        { title: 'Identify your Audience', url: '#', category: 'Marketing' }
     ];
 
     // Perform search
@@ -261,3 +215,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 //----------------------------------------------------------------------
+
+// Add error handling for video
+const heroVideo = document.querySelector('.hero-video');
+heroVideo.addEventListener('error', function() {
+    this.style.display = 'none';
+    this.parentElement.classList.add('video-error');
+});

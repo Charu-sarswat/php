@@ -10,8 +10,9 @@ header("Pragma: no-cache");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SF BEN</title>
+    <title>UNIQUE CRAZE</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -23,21 +24,25 @@ header("Pragma: no-cache");
     <header>
         <nav>
             <div class="h_container">
-                <div class="logo">
-                    <img src="company.png" alt="SF BEN Logo" style="width: 60px; height: 50px;">
+                <div class="logo" style="margin-left: 20px;">
+                    <img src="company.png" alt="Logo" style="width: 60px; height: 50px;">
+                    
                 </div>
+                <h1 style="margin-left: 10px;">
+                    <span style="font-size: 1.4rem;">U</span>
+                    <span>nique</span>
+                    <span>Craze</span>
+                </h1>
                 
-                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-                    <span class="sun">☀️</span>
-                    <span class="moon">🌙</span>
-                </button>
                 
-                <div class="nav-links">
+                
+                <div class="nav-links" style="margin-left: 20px; font-size: 1rem;">
                     <ul>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">AppAssessor</a></li>
-                        <li><a href="#">Salesforce News</a></li>
+                        <li><a href="#" style="font-size: 1rem;">Home</a></li>
+                        <li><a href="#" style="font-size: 1rem;">Services</a></li>
+                        <li><a href="#" style="font-size: 1rem;">About Us</a></li>
+                        <li><a href="#" style="font-size: 1rem;">Contact</a></li>
+                        <li><pre>       </pre></li>
                         <li id="auth-section">
                             <?php
                             if (isset($_SESSION['user_name'])) {
@@ -66,90 +71,68 @@ header("Pragma: no-cache");
             <div class="main_container">
                 <div class="top_setting">
                     <div class="heading_content">
-                        <h1>Are Salesforce Certifications Still Relevant? Top Voices Join the Great Cert Debate</h1>
-                        <p>By Henry Martin | January 10, 2025</p>
+                        <h1 style="font-size: 2.8rem; font-weight: 700; line-height: 1.5;">We Shape the Perfect Solutions</h1>
+                        <p style="font-size: 1.2rem; font-weight: 500; line-height: 1.5;">We are dedicated to delivering exceptional service that <br>exceeds our customers' expectations. Our commitment goes beyond service; we create experiences that build trust and lasting relationships.</p><br><br>
                         <div class="share-buttons">
                             <!-- Each button has a data-platform attribute to identify the social platform -->
                             <button class="share-btn" data-platform="twitter"></button>
                             <button class="share-btn" data-platform="linkedin"></button>
                             <button class="share-btn" data-platform="facebook"></button>
                         </div>
-                        <a href="#">Read More</a>
                     </div>
-                    <div class="hero-image">
-                        <img src="https://usercontent.one/wp/magazine.artland.com/wp-content/uploads/2023/01/ai-future-creativity.jpg?media=1690186145" alt="hero_image" height="400px" width="400px">
+                    <div class="hero">
+                        <video autoplay loop muted playsinline class="hero-video">
+                            <source src="videoplayback.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
                 <div class="bottom_setting">
                     <article>
-                        <h3>Understanding Salesforce Ecosystem</h3>
-                        <p>Explore the various components of the Salesforce ecosystem and how they interact. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet.</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-laptop-code"></i>
+                        <a href="#" class="button">Website Development</a>
                     </article>
                     <article>
-                        <h3>Top 10 Salesforce Tips for Beginners</h3>
-                        <p>Get started with Salesforce with these essential tips for new users.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-building"></i>
+                        <a href="#" class="button">Brand Building</a>
                     </article>
                     <article>
-                        <h3>Salesforce Best Practices</h3>
-                        <p>Learn the best practices to optimize your Salesforce experience.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-bullhorn"></i>
+                        <a href="#" class="button">Digital Marketing</a>
                     </article>
                     <article>
-                        <h3>Understanding Salesforce Ecosystem</h3>
-                        <p>Explore the various components of the Salesforce ecosystem and how they interact. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet.</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-search"></i>
+                        <a href="#" class="button">SEO & Content Writing</a>
                     </article>
                     <article>
-                        <h3>Top 10 Salesforce Tips for Beginners</h3>
-                        <p>Get started with Salesforce with these essential tips for new users.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-mobile-alt"></i>
+                        <a href="#" class="button">App Development</a>
                     </article>
                     <article>
-                        <h3>Salesforce Best Practices</h3>
-                        <p>Learn the best practices to optimize your Salesforce experience.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-paint-brush"></i>
+                        <a href="#" class="button">UI/UX Designing</a>
                     </article>
                     <article>
-                        <h3>Understanding Salesforce Ecosystem</h3>
-                        <p>Explore the various components of the Salesforce ecosystem and how they interact. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet.</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-desktop"></i>
+                        <a href="#" class="button">Embrace Responsive Design</a>
                     </article>
                     <article>
-                        <h3>Top 10 Salesforce Tips for Beginners</h3>
-                        <p>Get started with Salesforce with these essential tips for new users.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-tablet-alt"></i>
+                        <a href="#" class="button">Mobile Optimization</a>
                     </article>
                     <article>
-                        <h3>Salesforce Best Practices</h3>
-                        <p>Learn the best practices to optimize your Salesforce experience.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
-                    </article>
-                    <article>
-                        <h3>Understanding Salesforce Ecosystem</h3>
-                        <p>Explore the various components of the Salesforce ecosystem and how they interact. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet.</p>
-                        <a href="#" class="button">Read More</a>
-                    </article>
-                    <article>
-                        <h3>Top 10 Salesforce Tips for Beginners</h3>
-                        <p>Get started with Salesforce with these essential tips for new users.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
-                    </article>
-                    <article>
-                        <h3>Salesforce Best Practices</h3>
-                        <p>Learn the best practices to optimize your Salesforce experience.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti odit cumque quo culpa, numquam fugiat id ducimus? Dignissimos, eveniet</p>
-                        <a href="#" class="button">Read More</a>
+                        <i class="fas fa-users"></i>
+                        <a href="#" class="button">Identify your Audience</a>
                     </article>
                 </div>
             </div>
             <div class="side_container">
                 <h2>Advertisements</h2>
                 <div class="boxes">
-                    <div class="box" id="box1"></div>
-                    <div class="box" id="box2"></div>
-                    <div class="box" id="box3"></div>
-                    <div class="box" id="box4"></div>
+                    <div class="box" style="background-image: url('https://cdn.prod.website-files.com/627a5f477d5ec9079c88f0e2/63964cc739abd575d50b68ed_google-not-against-ai.jpg');"></div>
+                    <div class="box" style="background-image: url('https://cdn.prod.website-files.com/627a5f477d5ec9079c88f0e2/63964cc739abd575d50b68ed_google-not-against-ai.jpg');"></div>
+                    <div class="box" style="background-image: url('https://cdn.prod.website-files.com/627a5f477d5ec9079c88f0e2/63964cc739abd575d50b68ed_google-not-against-ai.jpg');"></div>
+                    <div class="box" style="background-image: url('https://cdn.prod.website-files.com/627a5f477d5ec9079c88f0e2/63964cc739abd575d50b68ed_google-not-against-ai.jpg');"></div>
                 </div>
             </div>
         </div>
@@ -170,10 +153,10 @@ header("Pragma: no-cache");
         <div class="footer_container">
             <div class="social-links">
                 <a href="#" class="social-icon"><img src="linkedin (1).png" alt="linkedin" style="width: 20px; height: 20px;"></a>
-                <a href="#" class="social-icon"><img src="twitter (1).png" alt="twitter" style="width: 20px; height: 20px;"></a>
+                <!-- <a href="#" class="social-icon"><img src="twitter (1).png" alt="twitter" style="width: 20px; height: 20px;"></a> -->
                 <a href="#" class="social-icon"><img src="facebook (1).png" alt="facebook" style="width: 20px; height: 20px;"></a>
             </div>
-            <p>&copy; 2025 SF BEN. All rights reserved.</p>
+            <p>&copy; 2025 UNIQUE CRAZE. All rights reserved.</p>
         </div>
     </footer>
     <button id="backToTop" title="Back to Top">↑</button>

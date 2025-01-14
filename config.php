@@ -3,10 +3,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$host = 'sql107.infinityfree.com';
-$dbname = 'if0_38096748_user_management';
-$username = 'if0_38096748';
-$password = 'AANLDfQfAkNB2wy';
+$host = 'sql106.infinityfree.com';
+$dbname = 'if0_38101998_user_management';
+$username = 'if0_38101998';
+$password = 'Charu2004';
 
 try {
     // Connect directly to the database if it exists
